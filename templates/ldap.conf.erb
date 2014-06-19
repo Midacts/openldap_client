@@ -1,0 +1,32 @@
+# This file is managed by the Puppet Master.
+# Any changes to this file will be overwritten.
+#
+# If you need any additional assistance, please contact your system
+# administrator or the Puppet Master.
+#
+# == Author
+#
+# John McCarthy <jmccarthy@orthobanc.com>
+#
+# - http://www.midactstech.blogspot.com -
+# - https://www.github.com/Midacts -
+#
+# == Date
+#
+# 19th of June, 2014
+#
+# -- Version 1.0 --
+#
+#
+# LDAP Defaults
+#
+BASE    dc=<%= scope.lookupvar('openldap_client::params::suffix_name') %>,dc=<%= scope.lookupvar('openldap_client::params::suffix_root') %>
+URI     ldap://<%= scope.lookupvar('openldap_client::params::openldap_address') %>
+
+#SIZELIMIT      12
+#TIMELIMIT      15
+#DEREF          never
+
+# TLS certificates
+ssl             start_tls
+TLS_CACERT      <%= scope.lookupvar('openldap_client::params::tls_cacertfile') %>
