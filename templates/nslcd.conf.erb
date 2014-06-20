@@ -39,5 +39,5 @@ bindpw <%= scope.lookupvar('openldap_client::params::bindpw') %>
 
 # SSL options
 ssl start_tls
-#tls_reqcert never
+tls_reqcert allow
 tls_cacertfile  <%= scope.lookupvar('openldap_client::params::tls_cacertfile') %>
