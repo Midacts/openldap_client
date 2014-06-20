@@ -61,7 +61,7 @@ class openldap_client {
     content     => template('openldap_client/nslcd.conf.erb'),
     mode        => 640,
     owner       => root,
-    group       => root,
+    group       => nslcd,
     require     => File['/etc/ldap/ldap.conf'],
   }
 
